@@ -1,0 +1,25 @@
+{
+  "name": "clone-instagram",
+  "version": "1.0.0",
+  "description": "instagram clone with Express + Prisma + React and React Native",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MJ-Kim-dev/clone-instagram.git"
+  },
+  "author": "MJ Kim <minjini57@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MJ-Kim-dev/clone-instagram/issues"
+  },
+  "homepage": "https://github.com/MJ-Kim-dev/clone-instagram#readme",
+  "dependencies": {
+    "graphql-yoga": "^1.18.3",
+    "nodemon": "^2.0.4"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0"
+  },
+  "scripts": {
+    "dev": "nodemon --exec babel-node src/server.js"
+  }
+}
