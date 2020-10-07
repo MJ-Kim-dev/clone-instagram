@@ -6,7 +6,7 @@ const allTypes = fileLoader(path.join(__dirname, "/api/**/*.graphql"));
 const allResolvers = fileLoader(path.join(__dirname, "/api/**/*.js"));
 
 console.log(allResolvers);
-console.log(allTypes);
+//console.log(allTypes);
 const schema = makeExecutableSchema({
   typeDefs: mergeTypes(allTypes),
   resolvers: mergeResolvers(allResolvers),
