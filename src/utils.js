@@ -4,7 +4,6 @@ dotenv.config({ path: path.resolve(__dirname, ".env") });
 
 import { adjectives, nouns } from "./words";
 import nodemailer from "nodemailer";
-import mg from "nodemailer-mailgun-transport";
 
 export const generateSecret = () => {
   const randomNumber = Math.floor(Math.random() * adjectives.length);
@@ -13,18 +12,19 @@ export const generateSecret = () => {
 
 const sendMail = (email) => {
   const options = {
+    service: "Gmail",
     auth: {
-      api_key: process.env.API_KEY,
-      domain: process.env.DOMAIN,
+      user: process.env.GMAIL_USER,
+      pass: process.env.GMAIL_PASS,
     },
   };
-  const client = nodemailer.createTransport(mg(options));
+  const client = nodemailer.createTransport(options);
   return client.sendMail(email);
 };
 
 export const sendSecretMail = (address, secret) => {
   const email = {
-    from: "xxxxxx@naver.com",
+    from: process.env.GMAIL_USER,
     to: address,
     subject: "Login Secret for CloneInstagram",
     html: `Hello! Your login secret is ${secret}.<br/>Copy pasted on the app/website to log in`,
