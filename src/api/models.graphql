@@ -2,21 +2,21 @@ type User {
   id: ID!
   username: String!
   email: String!
-  firstName: String!
+  firstName: String
   lastName: String
   bio: String
   followers: [User!]!
   following: [User!]!
   posts: [Post!]!
   likes: [Like!]!
-  comments: [Comment!]
+  comments: [Comment!]!
   rooms: [Room!]!
   loginSecret: String!
 }
 
 type Post {
   id: ID!
-  location: String!
+  location: String
   caption: String!
   user: User!
   files: [File!]!
